@@ -1,30 +1,35 @@
-import {useState,useEffect} from 'react';
+import { useEffect, useState } from "react"
 
-//components
-import WorkoutDetails from '../components/WorkoutDetauils';
+// components
+import WorkoutDetails from "../components/WorkoutDetails"
+import WorkoutForm from "../components/WorkoutForm"
+
 const Home = () => {
-    const [workouts,setWorkouts]=useState(null);
+  const [workouts, setWorkouts] = useState(null)
 
-    useEffect(()=>{
-        const fetchWorkout=async ()=>{
-            const res= await fetch("/api/workouts");
-            const json=await res.json();
+  useEffect(() => {
+    const fetchWorkouts = async () => {
+      const response = await fetch('/api/workouts')
+      const json = await response.json()
 
-            if(res.ok){
-                setWorkouts(json);
-            }
-        }
-        fetchWorkout();
-    },[])
-    return ( 
-        <div className="Home">
-            <div className="workouts">
-                {workouts && workouts.map((workout)=>(
-                    <WorkoutDetails key={workout._id} workout={workout}/>
-                ))}
-            </div>
-        </div>
-    );
+      if (response.ok) {
+        setWorkouts(json)
+      }
+    }
+
+    fetchWorkouts()
+  }, [])
+
+  return (
+    <div className="home">
+      <div className="workouts">
+        {workouts && workouts.map(workout => (
+          <WorkoutDetails workout={workout} key={workout._id} />
+        ))}
+      </div>
+      <WorkoutForm />
+    </div>
+  )
 }
- 
-export default Home;
+
+export default Home
