@@ -25,7 +25,7 @@ const WorkoutForm = () => {
         const json=await response.json();
         if(!response.ok){
             setError(json.error);
-            setEmptyFields(json.error);
+            setEmptyFields(json.emptyFields);
 
             console.log(error);
         }
@@ -44,11 +44,11 @@ const WorkoutForm = () => {
         <form className='create' onSubmit={handleSubmit}>
             <h3>Add a New Workout</h3>
             <label>Workout Title:</label>
-            <input type="text" className={emptyFields} onChange={(e)=>setTitle(e.target.value)} value={title} />
+            <input type="text" className={emptyFields.includes('title') ? 'error' : ''} onChange={(e)=>setTitle(e.target.value)} value={title} />
             <label>Loads(in kgs):</label>
-            <input type="text" onChange={(e)=>setLoads(e.target.value)} value={load} />
+            <input type="text" className={emptyFields.includes('loads')?'error':''} onChange={(e)=>setLoads(e.target.value)} value={load} />
             <label>Reps:</label>
-            <input type="text" onChange={(e)=>setReps(e.target.value)} value={reps} />
+            <input type="text" className={emptyFields.includes('reps')?'error':''} onChange={(e)=>setReps(e.target.value)} value={reps} />
             <button>Add Workout</button>
             {error && <div className='error'>{error}</div>}
         </form>

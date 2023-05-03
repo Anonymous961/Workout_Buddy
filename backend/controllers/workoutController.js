@@ -36,7 +36,7 @@ const createWorkout = async (req,res)=>{
     if(!title){
         emptyFields.push('title');
     }
-    if(!loads){
+    if(!load){
         emptyFields.push('loads');
     }
     if(!reps){
