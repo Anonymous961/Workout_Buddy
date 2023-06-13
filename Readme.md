@@ -7,11 +7,10 @@ Welcome to Workout Buddy! This repository contains a full-stack fitness applicat
 ## Features
 
 - **Workout Tracking**: Keep track of your workout sessions, including exercises performed, sets, reps, and weights used.
-- **Exercise Library**: Explore a comprehensive library of exercises with detailed instructions and demonstration videos to ensure proper form and technique.
+
 - **Goal Setting**: Set your fitness goals and track your progress over time, motivating you to stay on track and achieve your targets.
-- **Workout Plans**: Access pre-built workout plans tailored to different fitness levels and specific goals, such as weight loss, muscle gain, or general fitness.
 - **Custom Workouts**: Create your own personalized workout routines, selecting exercises from the exercise library and adjusting parameters according to your preferences.
-- **Reminders and Notifications**: Receive reminders and notifications to stay consistent with your workout schedule and maintain your motivation.
+
 - **Community Support**: Engage with a supportive community of fitness enthusiasts, sharing tips, progress updates, and providing encouragement to one another.
 
 ## Installation
