@@ -11,15 +11,12 @@ const WorkoutDetails = ({ workout }) => {
     if (!user) {
       return;
     }
-    const response = await fetch(
-      "https://workout-buddy-api.vercel.app/api/workouts/" + workout._id,
-      {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      }
-    );
+    const response = await fetch("/api/workouts/" + workout._id, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${user.token}`,
+      },
+    });
     const json = await response.json();
 
     if (response.ok) {
