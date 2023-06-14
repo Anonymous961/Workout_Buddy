@@ -4,9 +4,17 @@ const express = require("express");
 const mongoose = require("mongoose");
 const workoutRoutes = require("./routes/workout");
 const userRoutes = require("./routes/user");
+const cors = require("cors");
 
 //express app
 const app = express();
+
+app.use(
+  cors({
+    origin: "https://workout-buddy-omega.vercel.app/",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
+);
 
 //middleware
 app.use(express.json());
