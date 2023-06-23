@@ -9,7 +9,7 @@ export const useLogin = () => {
   const login = async (email, password) => {
     setIsLoading(true);
     setError(null);
-    console.log(process.env.REACT_APP_API_URL);
+    // console.log(process.env.REACT_APP_API_URL);
     const response = await fetch(
       process.env.REACT_APP_API_URL + "/api/user/login",
       {
