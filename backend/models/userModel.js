@@ -28,7 +28,7 @@ userSchema.statics.signup = async function (email, password) {
   }
   if (!validator.isStrongPassword(password)) {
     throw Error(
-      "Password not strong enough.Password must contain capital letter,small letter,number and symbal."
+      "Password not strong enough. Password must contain capital letter, small letter, number and symbol."
     );
   }
 
